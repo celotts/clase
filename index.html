@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="StyleSheet" href="style.css" type="text/css" media="screen" />
+    <title>CursoVue</title>
+  </head>
+
+  <body>
+    <div id="app" v-bind:style="{background: '#' + color}">
+      <img :src="img" width="50" height="50" :alt="name" v-on:click="thoggleShowPrice()" />
+
+      <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
+        {{ title }} <span v-if="changePercent > 0"> 1;</span> <span v-else-if="changePercent == 0"> 0;</span>
+        <span v-else="changePercent < 0"> -1;</span>
+      </h1>
+
+      <input type="number" v-model="value" /> <span>{{ convertedValue }}</span>
+      <ul>
+        <li v-bind:class="{orange: precios.value === price}" v-for="(precios , index) in priceWithDay" v-bind:key="precios.day">
+          {{ index }} - {{ precios.day }} - {{ precios.value }}
+        </li>
+      </ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
