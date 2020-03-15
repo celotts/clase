@@ -24,6 +24,7 @@ new Vue({
                 { day: 'Sábado', value: 10000 },
                 { day: 'Domingo', value: 10200 },
             ]
+
         }
 
     },
