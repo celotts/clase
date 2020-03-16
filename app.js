@@ -38,7 +38,7 @@ new Vue({
                 return 0;
             }
 
-            return this.value / this.price;
+            return (this.value / this.price);
         }
     },
 
